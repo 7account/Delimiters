@@ -12,7 +12,7 @@ public class Delimiters {
         ArrayList<String> result = new ArrayList<String>();
         for (int x = 0; x < tokens.length; x++) {
             if (tokens[x] == closeDel) result.add(tokens[x]);
-            if (tokens[x] == openDel) result.add(tokens[x]);
+            else if (tokens[x] == openDel) result.add(tokens[x]);
         }
         return result;
     }
@@ -22,7 +22,7 @@ public class Delimiters {
         int closeCount = 0;
         for (int x = 0; x < delimiters.size(); x++) {
             if (delimiters.get(x) == openDel) openCount++;
-            if (delimiters.get(x) == closeDel) closeCount++;
+            else if (delimiters.get(x) == closeDel) closeCount++;
             if (closeCount > openCount) return false;
         }
         if (openCount != closeCount) return false;
